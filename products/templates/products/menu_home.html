@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block title %}Меню{% endblock %}
+
+{% block content %}
+<div class="heder_menu">
+    <div class="mn">
+        <div class="menus">
+            <h1 class="men">Меню</h1>
+            {% if user.is_superuser %}
+            <a href="{% url 'cart' %}"  style="margin-left: 495px;" class="adds">Корзина</a>
+            <a href="{% url 'adda' %}" class="add">Добавить</a>
+            {%else %}
+            <a href="{% url 'cart' %}"  style="margin-left: 600px;" class="adds">Корзина</a>
+            {% endif %}
+           
+
+            <div class="poisk" >
+                <div class="nav-item active col-4">
+                    <form class="form-inline my-2 my-lg-0" method="post">
+                        {% csrf_token %}
+                        <div  class="searchik form-group">
+                            <input type="text" class="form-control" name="search" id="id_search">
+                            <input id="submit_search" class="form-control" type="submit" hidden>
+                            <label for="submit_search" class="button poiskat">Поиск</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+       
+        <div class="poisktov">
+            <div class="tovarchk"> 
+                {% for c in cotegory %}
+                <div style="display: flex; width: 775px;" class="razburg">
+                    <span style="margin-top: 23px">{{c.title}}</span>
+                    <div style="width : 950px; ">
+                        <div style="float: right ">
+                            <a  href="{% url 'menu' %}?-price=sort">
+                            <button style="width: 20px; height: 25px; padding: 0; border-color: black; color: black" class="btn btn-outline-primary">></button>
+                        </a>
+                        <a href="{% url 'menu' %}?price=sort">
+                            <button style="width: 20px; height: 25px; padding: 0; border-color: black; color: black" class="btn btn-outline-primary"><</button>
+                        </a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="sf row">
+                    {% if menu %}
+                    {% for el in menu %}
+                    {% if el.cotegory.title == c.title %}
+                    <div class="tovar col-3">
+                        
+                        <div class="cart">
+                            {%  if user.is_superuser %} 
+                            <a style="position: absolute; margin-left: 150px; color: black" href="{% url 'delete_menu' el.id %}">x</a>
+                            {% endif %}
+                            <a href="{% url 'menu_detail' el.id %}">
+                                <div class="blockdl"><img class="card-img w-119 h-118"
+                                                          src="{{ MEDIA_URL }}{{ el.images }}"
+                                                          alt=""></div>
+                                <a href="{{ el.id }}" class="elname">{{ el.name }}</a>
+                            </a>
+                            
+                            <form class="corz" action="{% url 'cart' %}" name="add" method="POST">
+                                <div class="cras">
+                                    {% csrf_token %}
+                                    <input class="" type="hidden" name="dish_id" value="{{ el.id }}">
+                                    <label class="bordertp">
+                                        <input class="inpsd" type="number" name="qty" value="{{ menu.id }}">
+                                    </label>
+                                    <div class="domss"> {{ el.price }}</div>
+                                    <button class="cnopochka domms" type="submit"><img class="imgcnop"
+                                                                                       src="../static/web/img/w128h1281390856920buy128.png"
+                                                                                       alt=""></button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    {%endif%}
+                    {% endfor %}
+                    {% else %}
+                    <p class="pusto"> В меню пусто </p>
+                    {% endif %}
+                </div>
+                {%endfor%}
+            </div>
+            <div class="poiscovv">
+
+                <div class="">
+                    {% if menus %}
+                    <div class="razburg">
+                        Найдено
+                    </div>
+                    {% for ela in menus %}
+                    <div class="tovar">
+                        <div class="cart">
+                            <a href="{{ ela.id }}">
+                                <div class="blockdl"><img class="card-img w-119 h-118"
+                                                          src="{{ MEDIA_URL }}{{ ela.images }}"
+                                                          alt=""></div>
+                                <a href="{{ ela.id }}" class="elname">{{ ela.name }}</a>
+                            </a>
+                            <form class="corz" action="cart/" method="post">
+                                <div class="cras">
+                                    {% csrf_token %}
+                                    <input class="" type="hidden" name="dish_id" value="{{ ela.id }}">
+                                    <label class="bordertp">
+                                        <input class="inpsd" type="number" name="qty" value="{{ menus.id }}">
+                                    </label>
+                                    <div class="domss"> {{ ela.price }}</div>
+                                    <button class="cnopochka domms" type="submit"><img class="imgcnop"
+                                                                                       src="../static/web/img/w128h1281390856920buy128.png"
+                                                                                       alt=""></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <p class="pusto nosearsh"></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+

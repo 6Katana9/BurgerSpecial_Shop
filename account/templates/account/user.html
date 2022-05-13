@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+<section class="login">
+    <div class="suma">
+        <div style="background-color: #E5F0F2;" class="vh">
+            <form class="vdd" action="" method="post">
+                {% csrf_token %}
+                <div class="ds ">
+                    {{ form.as_p }}
+                </div>
+                <button class="vhodcnop" type="submit">Войти</button>
+
+                <a class="btn btn-primary googles" href="{% url 'social:begin' 'google-oauth2' %}">
+                    <img class="googleee" src="../../static/menu/img/588px-Google__G__Logo.svg.png" alt="">
+                </a>
+                <a class="btn btn-primary googles" href="/login/vk-oauth2">
+                    <img class="vk" src="../../static/menu/img/vk-logo-1.png" alt="">
+                </a>
+            </form>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
