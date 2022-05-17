@@ -133,21 +133,10 @@ LOGOUT_REDIRECT_URL = '/'
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIR = [
-    BASE_DIR / "menu/static",
-    BASE_DIR / "web/static",
-    BASE_DIR / "menu/media",
-    BASE_DIR / "web/media",
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-STATIC_ROOT = BASE_DIR / 'static/'
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
