@@ -26,7 +26,7 @@ li{
 .sh{
     list-style: none;
     border-radius: 44px;
-    box-shadow: 6px 4px 9px rgba(0, 0, 0, 0.32), -4px -4px 14px white, inset -12px -12px 23px rgba(0, 0, 0, 0.07), inset 9px 9px 23px white, rgba(255, 255, 255, 0.86); /* Параметры тени */
+    box-shadow: 6px 4px 9px rgba(0, 0, 0, 0.32), -4px -4px 14px white, inset -12px -12px 23px rgba(0, 0, 0, 0.07), inset 9px 9px 23px white;rgba(255, 255, 255, 0.86); /* Параметры тени */
     width: 60px;
     margin-left: 30px;
     height: 25px;
@@ -128,7 +128,7 @@ li{
     width: 100px;
     height: 30px;
     border-radius: 10px;
-    box-shadow: 6px 4px 9px rgba(0, 0, 0, 0.32), -4px -4px 14px white, inset -12px -12px 23px rgba(0, 0, 0, 0.07), inset 9px 9px 23px white, rgba(255, 255, 255, 0.86); /* Параметры тени */
+    box-shadow: 6px 4px 9px rgba(0, 0, 0, 0.32), -4px -4px 14px white, inset -12px -12px 23px rgba(0, 0, 0, 0.07), inset 9px 9px 23px white;rgba(255, 255, 255, 0.86); /* Параметры тени */
     font-family: "Yanone Kaffeesatz", sans-serif;
     padding: 4px 25px;
     margin: 55px 0 0 10px;
@@ -146,7 +146,7 @@ li{
     width: 100px;
     height: 30px;
     border-radius: 10px;
-    box-shadow: 6px 4px 9px rgba(0, 0, 0, 0.32), -4px -4px 14px white, inset -12px -12px 23px rgba(0, 0, 0, 0.07), inset 9px 9px 23px white,rgba(255, 255, 255, 0.86); /* Параметры тени */
+    box-shadow: 6px 4px 9px rgba(0, 0, 0, 0.32), -4px -4px 14px white, inset -12px -12px 23px rgba(0, 0, 0, 0.07), inset 9px 9px 23px white;rgba(255, 255, 255, 0.86); /* Параметры тени */
     font-family: "Yanone Kaffeesatz", sans-serif;
     padding: 4px 25px;
     margin: 55px 0 0 490px;
@@ -414,7 +414,7 @@ li{
     width: 100px;
     height: 30px;
     border-radius: 10px;
-    box-shadow: 6px 4px 9px rgba(0, 0, 0, 0.32), -4px -4px 14px white, inset -12px -12px 23px rgba(0, 0, 0, 0.07), inset 9px 9px 23px white, rgba(255, 255, 255, 0.86); /* Параметры тени */
+    box-shadow: 6px 4px 9px rgba(0, 0, 0, 0.32), -4px -4px 14px white, inset -12px -12px 23px rgba(0, 0, 0, 0.07), inset 9px 9px 23px white;rgba(255, 255, 255, 0.86); /* Параметры тени */
     font-family: "Yanone Kaffeesatz", sans-serif;
     padding: 4px 25px;
     margin: 55px 0 0 570px;

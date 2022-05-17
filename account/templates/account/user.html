@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Вход{% endblock %}
 
 {% block content %}
@@ -14,10 +14,10 @@
                 <button class="vhodcnop" type="submit">Войти</button>
 
                 <a class="btn btn-primary googles" href="{% url 'social:begin' 'google-oauth2' %}">
-                    <img class="googleee" src="../../static/menu/img/588px-Google__G__Logo.svg.png" alt="">
+                    <img class="googleee" src="{% static 'menu/img/588px-Google__G__Logo.svg.png' %}" alt="">
                 </a>
                 <a class="btn btn-primary googles" href="/login/vk-oauth2">
-                    <img class="vk" src="../../static/menu/img/vk-logo-1.png" alt="">
+                    <img class="vk" src="{% static 'menu/img/vk-logo-1.png' %}" alt="">
                 </a>
             </form>
         </div>
